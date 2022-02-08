@@ -6,6 +6,8 @@ import TodoFooter from "./TodoFooter";
 
 function reducer(state, action) {
   if (action.type === "add") {
+    if (!action.payload.text) return state;
+
     return [
       ...state,
       {
